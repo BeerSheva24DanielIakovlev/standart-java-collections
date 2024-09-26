@@ -60,14 +60,6 @@ public class MapTasks {
     }
 
     public static void displayDigitsDistribution() {
-        //TODO
-        //1_000_000 random numbers from 0 to Integer.MAX_VALUE created (they can be repeated)
-        //Output should contain all digits (0 - 9) with counters of occurences
-        //sorted by descending order of occurences
-        //example:
-        //1 -> <counter of occurences>
-        //2 -> <counter of occurences>
-        // ............
         IntStream digitStream = new Random().ints(1_000_000, 0, Integer.MAX_VALUE)
         .flatMap(n -> Integer.toString(n).chars().map(c -> c - '0'));
 
@@ -81,9 +73,6 @@ public class MapTasks {
     }
 
     public static ParenthesesMaps getParenthesesMaps(Character[][] openCloseParentheses) {
-        // //TODO
-        // return null;
-
         Map<Character, Character> openCloseMap = Arrays.stream(openCloseParentheses)
             .collect(Collectors.toMap(pair -> pair[0], pair -> pair[1]));
 
